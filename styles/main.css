@@ -1,0 +1,59 @@
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.traffic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.light1, .light2, .road {
+  width: 200px;
+  height: 610px;
+  border: 2px solid orange;
+  box-sizing: border-box;
+  margin: 5px;
+}
+
+.light1, .light2 {
+  background-color: #000;
+}
+
+.red, .yellow, .green, .black, .none {
+  height: 200px;
+  border: 1px solid orange;
+  border-radius: 999px;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.black {
+  background-color: black;
+}
+
+.road {
+  background-color: gray;
+}
+
+.btnStartContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnStart {
+  margin: 20px;
+  width: 200px;
+}/*# sourceMappingURL=main.css.map */
