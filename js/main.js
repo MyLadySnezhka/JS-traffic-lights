@@ -29,15 +29,33 @@ const green = (colordiv1, colordiv2, colordiv3) => {
     colordiv3.classList.add('green');
 };
 
-//setInterval(() => yellow(red1, yellow1, green1), 5000);
-setInterval(() => red(red1, yellow1, green1), 10000);
-setInterval(() => redyellow(red1, yellow1, green1), 20000);
-setInterval(() => green(red1, yellow1, green1), 30000);
-setInterval(() => yellow(red1, yellow1, green1), 40000);
 
+
+setInterval( () => {
+    setTimeout(() => red(red1, yellow1, green1), 5000);
+    setTimeout(() => redyellow(red1, yellow1, green1), 10000);
+    setTimeout(() => green(red1, yellow1, green1), 15000);
+    setTimeout(() => yellow(red1, yellow1, green1), 20000);
+
+    setTimeout(() => green(red2, yellow2, green2), 5000);
+    setTimeout(() => yellow(red2, yellow2, green2), 10000);
+    setTimeout(() => red(red2, yellow2, green2), 15000);
+    setTimeout(() => redyellow(red2, yellow2, green2), 20000);
+}, 20000);
+
+
+
+
+
+
+//setInterval(() => yellow(red1, yellow1, green1), 5000);
+//setInterval(() => red(red1, yellow1, green1), 10000);
+//setInterval(() => redyellow(red1, yellow1, green1), 10000);
+//setInterval(() => green(red1, yellow1, green1), 10000);
+//setInterval(() => yellow(red1, yellow1, green1), 10000);
 
 //setInterval(() => yellow(red2, yellow2, green2), 5000);
-setInterval(() => green(red2, yellow2, green2), 10000);
-setInterval(() => yellow(red2, yellow2, green2), 20000);
-setInterval(() => red(red2, yellow2, green2), 30000);
-setInterval(() => redyellow(red2, yellow2, green2), 40000);
+// setInterval(() => green(red2, yellow2, green2), 10000);
+// setInterval(() => yellow(red2, yellow2, green2), 20000);
+// setInterval(() => red(red2, yellow2, green2), 30000);
+// setInterval(() => redyellow(red2, yellow2, green2), 40000);
