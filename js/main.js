@@ -26,26 +26,40 @@ const redyellow = (colordiv1, colordiv2, colordiv3) => {
 const green = (colordiv1, colordiv2, colordiv3) => {
     colordiv1.classList.remove('red');
     colordiv2.classList.remove('yellow');
+    colordiv3.classList.remove('black');
     colordiv3.classList.add('green');
 };
 
-const render = () => {
-    setTimeout(() => red(red1, yellow1, green1), 5000);
-    setTimeout(() => redyellow(red1, yellow1, green1), 10000);
-    setTimeout(() => green(red1, yellow1, green1), 15000);
-    setTimeout(() => yellow(red1, yellow1, green1), 20000);
+const black = (colordiv3) => {
+    colordiv3.classList.remove('green');
+    colordiv3.classList.add('black');
+};
 
-    setTimeout(() => green(red2, yellow2, green2), 5000);
-    setTimeout(() => yellow(red2, yellow2, green2), 10000);
-    setTimeout(() => red(red2, yellow2, green2), 15000);
-    setTimeout(() => redyellow(red2, yellow2, green2), 20000);
+const render = () => {
+    setTimeout(() => red(red1, yellow1, green1), 10000);
+    setTimeout(() => redyellow(red1, yellow1, green1), 20000);
+    setTimeout(() => green(red1, yellow1, green1), 30000);
+    setTimeout(() => black(green1), 36000);
+    setTimeout(() => green(red1, yellow1, green1), 37000);
+    setTimeout(() => black(green1), 38000);
+    setTimeout(() => green(red1, yellow1, green1), 39000);
+    setTimeout(() => yellow(red1, yellow1, green1), 40000);
+
+    setTimeout(() => green(red2, yellow2, green2), 10000);
+    setTimeout(() => black(green2), 16000);
+    setTimeout(() => green(red2, yellow2, green2), 17000);
+    setTimeout(() => black(green2), 18000);
+    setTimeout(() => green(red2, yellow2, green2), 19000);
+    setTimeout(() => yellow(red2, yellow2, green2), 20000);
+    setTimeout(() => red(red2, yellow2, green2), 30000);
+    setTimeout(() => redyellow(red2, yellow2, green2), 40000);
 };
 
 render();
 
 setInterval( () => {
     render();
-}, 20000);
+}, 40000);
 
 
 
