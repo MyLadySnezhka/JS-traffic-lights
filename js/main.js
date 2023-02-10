@@ -29,9 +29,7 @@ const green = (colordiv1, colordiv2, colordiv3) => {
     colordiv3.classList.add('green');
 };
 
-
-
-setInterval( () => {
+const render = () => {
     setTimeout(() => red(red1, yellow1, green1), 5000);
     setTimeout(() => redyellow(red1, yellow1, green1), 10000);
     setTimeout(() => green(red1, yellow1, green1), 15000);
@@ -41,6 +39,12 @@ setInterval( () => {
     setTimeout(() => yellow(red2, yellow2, green2), 10000);
     setTimeout(() => red(red2, yellow2, green2), 15000);
     setTimeout(() => redyellow(red2, yellow2, green2), 20000);
+};
+
+render();
+
+setInterval( () => {
+    render();
 }, 20000);
 
 
