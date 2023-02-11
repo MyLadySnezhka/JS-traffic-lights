@@ -1,9 +1,11 @@
 const red1 = document.querySelector('.light1 > div[name=red]');
 const yellow1 = document.querySelector('.light1 > div[name=yellow]');
 const green1 = document.querySelector('.light1 > div[name=green]');
+const count1 = document.querySelector('.light1 > .count');
 const red2 = document.querySelector('.light2 > div[name=red]');
 const yellow2 = document.querySelector('.light2 > div[name=yellow]');
 const green2 = document.querySelector('.light2 > div[name=green]');
+const count2 = document.querySelector('.light2 > .count');
 
 const red = (colordiv1, colordiv2, colordiv3) => {
     colordiv1.classList.add('red');
@@ -35,28 +37,58 @@ const black = (colordiv3) => {
     colordiv3.classList.add('black');
 };
 
-// const blinkGreen = () => {
-
+// const blinkGreen = (colordiv3) => {
+    
 // };
 
-const render = () => {
-    setTimeout(() => red(red1, yellow1, green1), 10000);
-    setTimeout(() => redyellow(red1, yellow1, green1), 20000);
-    setTimeout(() => green(red1, yellow1, green1), 30000);
-    setTimeout(() => black(green1), 36000);
-    setTimeout(() => green(red1, yellow1, green1), 37000);
-    setTimeout(() => black(green1), 38000);
-    setTimeout(() => green(red1, yellow1, green1), 39000);
-    setTimeout(() => yellow(red1, yellow1, green1), 40000);
+const redt = (count) => {
+    count.classList.remove('greentext');
+    count.classList.add('redtext');
+}
 
-    setTimeout(() => green(red2, yellow2, green2), 10000);
-    setTimeout(() => black(green2), 16000);
-    setTimeout(() => green(red2, yellow2, green2), 17000);
-    setTimeout(() => black(green2), 18000);
-    setTimeout(() => green(red2, yellow2, green2), 19000);
-    setTimeout(() => yellow(red2, yellow2, green2), 20000);
-    setTimeout(() => red(red2, yellow2, green2), 30000);
-    setTimeout(() => redyellow(red2, yellow2, green2), 40000);
+const greent = (count) => {
+    count.classList.remove('redtext');
+    count.classList.add('greentext');
+}
+
+const delay = 10000;
+let id;
+const delayshag = delay;
+
+const timer = (count, colort, delayshag) => {
+    delayshag = delayshag - 1000;
+    if (delayshag>0) {
+            id = setTimeout(timer, 1000, count, colort, delayshag);
+            count.innerHTML = delayshag/1000;    
+    } else {
+        count.innerHTML = '--';  
+        clearTimeout(id);
+        return;
+    }  
+};
+                        
+const render = () => {
+    setTimeout(() => timer(count1, redt(count1), delayshag), delay);
+    setTimeout(() => red(red1, yellow1, green1), delay);       
+    setTimeout(() => redyellow(red1, yellow1, green1), delay+10000);
+    setTimeout(() => timer(count1, greent(count1), delayshag), delay+20000);
+    setTimeout(() => green(red1, yellow1, green1), delay+20000);
+    setTimeout(() => black(green1), delay+26000);
+    setTimeout(() => green(red1, yellow1, green1), delay+27000);
+    setTimeout(() => black(green1), delay+28000);
+    setTimeout(() => green(red1, yellow1, green1), delay+29000);
+    setTimeout(() => yellow(red1, yellow1, green1), delay+30000);
+
+    setTimeout(() => timer(count2, greent(count2), delayshag), delay);
+    setTimeout(() => green(red2, yellow2, green2), delay);
+    setTimeout(() => black(green2), delay+6000);
+    setTimeout(() => green(red2, yellow2, green2), delay+7000);
+    setTimeout(() => black(green2), delay+8000);
+    setTimeout(() => green(red2, yellow2, green2), delay+9000);
+    setTimeout(() => yellow(red2, yellow2, green2), delay+10000);
+    setTimeout(() => timer(count2, redt(count2), delayshag), delay+20000);
+    setTimeout(() => red(red2, yellow2, green2), delay+20000);
+    setTimeout(() => redyellow(red2, yellow2, green2), delay+30000);
 };
 
 render();

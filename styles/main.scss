@@ -12,7 +12,7 @@
 
 .light1, .light2, .road {
     width: 200px;
-    height: 610px;
+    height: 818px;
     border: 2px solid orange;
     box-sizing: border-box;
     margin: 5px;
@@ -26,6 +26,16 @@
     height: 200px;
     border: 1px solid orange;
     border-radius: 999px;
+    margin: 2px;
+}
+
+.count {
+    height: 200px;
+    border: 1px solid orange;
+    margin: 2px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 164px;
 }
 
 .red {
@@ -45,6 +55,14 @@
     // &:not(.show) {
     //     display: none;
     // }
+}
+
+.redtext {
+    color: red;
+}
+
+.greentext {
+    color: green;
 }
 
 .road {
