@@ -53,7 +53,7 @@ const greent = (count) => {
 
 const delay = 10000;
 let id;
-const delayshag = delay;
+const delayshag = delay + 1000;
 
 const timer = (count, colort, delayshag) => {
     delayshag = delayshag - 1000;
