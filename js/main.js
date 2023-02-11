@@ -35,6 +35,10 @@ const black = (colordiv3) => {
     colordiv3.classList.add('black');
 };
 
+// const blinkGreen = () => {
+
+// };
+
 const render = () => {
     setTimeout(() => red(red1, yellow1, green1), 10000);
     setTimeout(() => redyellow(red1, yellow1, green1), 20000);
